@@ -9,9 +9,9 @@ from flask_jwt_extended import (
 
 api_bp = Blueprint('api', __name__)
 
-# ✅ Auth routes
+
 @api_bp.route('/register', methods=['POST'])
-def register_user():  # renamed to avoid conflicts
+def register_user():  
     print("🔥 REGISTER ROUTE HIT")
     data = request.get_json()
     if not data.get('username') or not data.get('password') or not data.get('email'):

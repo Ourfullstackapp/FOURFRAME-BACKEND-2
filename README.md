@@ -1,3 +1,6 @@
+This is the backend for the Movie Web App. It allows users to sign up, log in, see movies, and post reviews. It is built using Python and Flask.
+
+
 # FOURFRAME-BACKEND-2
 # Flask Auth API
 
@@ -5,7 +8,7 @@ A RESTful Flask API for user registration, authentication using JWT, and profile
 
 ---
 
-##  Tech Stack
+##  Tech Stack 
 
 - **Backend:** Flask, Flask SQLAlchemy, Flask-JWT-Extended
 - **Database:** SQLite (default), can be configured for PostgreSQL
@@ -54,6 +57,7 @@ Edit
 ---
 
 ##  Installation & Setup
+To have access to this project:
 
 ### 1. Clone the repository
 
@@ -118,7 +122,7 @@ Copy
 Edit
 Authorization: Bearer <token>
  Testing
-Use Postman or cURL to test endpoints. Make sure to attach JWT to protected routes.
+Use Postman or Curl to test endpoints. Make sure to attach JWT to protected routes.
 
  Notes
 You can easily switch to PostgreSQL by updating the DATABASE_URL in .env.
