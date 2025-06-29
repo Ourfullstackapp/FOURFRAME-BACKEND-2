@@ -13,11 +13,10 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "http://localhost:3001"}}, supports_credentials=True)
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
-
 
     from . import models
     from .routes import api_bp
