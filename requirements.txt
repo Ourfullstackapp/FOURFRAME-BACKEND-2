@@ -1,7 +1,3 @@
-Flask
-Flask-Cors
-Flask-Migrate
-Flask-JWT-Extended
-Flask-SQLAlchemy
-python-dotenv
-Werkzeug
+-i https://pypi.org/simple
+gunicorn==23.0.0; python_version >= '3.7'
+packaging==25.0; python_version >= '3.8'
