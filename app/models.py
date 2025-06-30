@@ -30,32 +30,23 @@ class Task(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
-# ---------------------------
-# Item Model
-# ---------------------------
+-
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), nullable=False)
     description = db.Column(db.String(255))
     category = db.Column(db.String(50))
 
-    # Relationships
     comments = db.relationship('Comment', backref='item', lazy=True)
 
 
-# ---------------------------
-# Comment Model
-# ---------------------------
+
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey('item.id'), nullable=False)
 
-
-# ---------------------------
-# RefreshToken Model
-# ---------------------------
 class RefreshToken(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     token = db.Column(db.String(255), unique=True, nullable=False)
