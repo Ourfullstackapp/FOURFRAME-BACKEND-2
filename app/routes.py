@@ -10,9 +10,7 @@ from flask_jwt_extended import (
 api_bp = Blueprint('api', __name__)
 
 
-# ---------------------------
-# Register User
-# ---------------------------
+
 @api_bp.route('/register', methods=['POST'])
 def register_user():
     print("🔥 REGISTER ROUTE HIT")
@@ -32,9 +30,6 @@ def register_user():
     return jsonify({'message': 'User registered successfully'}), 201
 
 
-# ---------------------------
-# Login User
-# ---------------------------
 @api_bp.route('/login', methods=['POST'])
 def login_user():
     data = request.get_json()
@@ -61,10 +56,6 @@ def login_user():
 
     return jsonify({'error': 'Invalid credentials'}), 401
 
-
-# ---------------------------
-# Get or Update User Profile
-# ---------------------------
 @api_bp.route('/api/profile', methods=['GET', 'PUT'])
 @jwt_required()
 def handle_profile():
